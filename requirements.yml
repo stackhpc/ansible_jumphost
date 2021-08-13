@@ -1,0 +1,4 @@
+---
+roles:
+  - src: git+https://github.com/openstack/ansible-hardening
+  

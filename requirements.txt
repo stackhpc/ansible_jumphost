@@ -1,0 +1,4 @@
+ansible>=2.9.0
+openstacksdk
+python-openstackclient
+selinux # this is a shim to avoid having to use --system-site-packages, you still need sudo yum install libselinux-python3

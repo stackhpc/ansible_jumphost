@@ -1,0 +1,24 @@
+---
+# https://fedoraproject.org/wiki/Fail2ban_with_FirewallD, no email
+
+- name: Install EPEL repo
+  package:
+    name: epel-release
+
+- name: Install fail2ban packages
+  package:
+    name:
+      - fail2ban-server
+      - fail2ban-firewalld
+    state: present
+
+- name: Create config
+  template:
+    dest: /etc/fail2ban/jail.local
+    src: jail.local.j2
+
+- name: Start fail2ban
+  service:
+    name: fail2ban
+    state: started
+    enabled: true
